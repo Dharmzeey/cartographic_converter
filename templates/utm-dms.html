@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="header">
+  <span>Convert from UTM (Universal Transverse Mercator) </span>
+  to
+  <span> DMS (Degrees Minutes Seconds)</span>
+</h1>
+<form action="/utm-dms" method="POST">
+  <label for="lon">Your Longitude:
+    <input type="number" step="any" name="lon" id="lon">
+  </label>
+  <label for="easting">Easting:
+    <input type="number" step="any" name="easting" id="easting">
+  </label>
+  <label for="northing">Northing:
+    <input type="number" step="any" name="northing" id="northing">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+
+{% if output %}
+<div class="output">
+  <div>{{ output[0] }} </div>
+  <div>{{ output[1] }} </div>
+</div>
+{% endif %}
+{% endblock %}
