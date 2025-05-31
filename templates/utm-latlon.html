@@ -1,31 +1,25 @@
-{% extends 'base.html' %}
+{% extends "base.html" %} {% block content %}
+<h1 class="header">Convert from UTM to Latitude & Longitude</h1>
 
-{% block content %}
-<h1 class="header">
-  <span>Convert from UTM (Universal Transverse Mercator) </span>
-  to
-  <span> Latitude and Longitude</span>
-</h1>
-<form action="/utm-latlon" method="POST">
-  <label for="lon">Your Longitude:
-    <input type="number" step="any" name="lon" id="lon">
+<form action="/utm-latlon/" method="POST">
+  <label for="lon"
+    >Your Longitude:
+    <input type="number" step="any" name="lon" id="lon" required />
   </label>
-  <label for="easting">Easting:
-    <input type="number" step="any" name="easting" id="easting">
+  <label for="easting"
+    >Easting:
+    <input type="number" step="any" name="easting" id="easting" required />
   </label>
-  <label for="northing">Northing:
-    <input type="number" step="any" name="northing" id="northing">
+  <label for="northing"
+    >Northing:
+    <input type="number" step="any" name="northing" id="northing" required />
   </label>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Convert" />
 </form>
 
 {% if output %}
 <div class="output">
-  <div>{{ output[0] }} </div>
-  <div>{{ output[1] }} </div>
+  <div><strong>Latitude:</strong> {{ output[0] }}</div>
+  <div><strong>Longitude:</strong> {{ output[1] }}</div>
 </div>
-{% endif %}
-<script>
-  var lon = document.getElementById("lon");
-</script>
-{% endblock %}
+{% endif %} {% endblock %}

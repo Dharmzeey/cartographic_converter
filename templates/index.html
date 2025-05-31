@@ -1,7 +1,66 @@
-{% extends 'base.html' %}
+<!-- templates/index.html -->
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-<h1>Welcome to Home Page</h1>
-<a href="utm-dms">UTM to DMS</a>
-<a href="utm-latlon">UTM to LONG LAT</a>
+<h1 class="header">Welcome to UTM DMS Converter</h1>
+
+<section class="intro">
+  <p>
+    This tool helps you convert coordinates between different geographic
+    systems. Whether you're working with maps, GIS data, or field surveys, this
+    app makes it easy to switch between formats.
+  </p>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <h2>📍 UTM to DMS</h2>
+    <p>
+      Convert Universal Transverse Mercator (UTM) coordinates into Degrees,
+      Minutes, Seconds (DMS). Ideal for manual plotting or sharing in
+      traditional formats.
+    </p>
+    <a href="/utm-dms/" class="btn">Go to UTM → DMS</a>
+  </div>
+
+  <div class="feature">
+    <h2>🌐 UTM to Latitude/Longitude</h2>
+    <p>
+      Convert UTM coordinates to standard latitude and longitude format (decimal
+      degrees). Useful for GPS devices, mapping apps, and geospatial analysis.
+    </p>
+    <a href="/utm-latlon/" class="btn">Go to UTM → LatLon</a>
+  </div>
+</section>
+
+<section class="how-to-use">
+  <h2>📘 How to Use</h2>
+  <ol>
+    <li>Select a conversion type above.</li>
+    <li>
+      Enter your <strong>Easting</strong>, <strong>Northing</strong>, and
+      <strong>Zone Longitude</strong>.
+    </li>
+    <li>Click “Convert” to see the result instantly.</li>
+  </ol>
+</section>
+
+<!-- templates/index.html -->
+<section class="info-section">
+  <button id="toggle-info" class="info-toggle">
+    ℹ️ What are Easting and Northing?
+  </button>
+  <div id="info-content" class="info-content hidden">
+    <p>
+      <strong>Easting</strong> is the X-coordinate in the UTM system. It tells
+      you how far east (in meters) a location is from the central meridian of
+      its UTM zone.
+    </p>
+    <p>
+      <strong>Northing</strong> is the Y-coordinate. It tells you how far north
+      (in meters) a location is from the equator.
+    </p>
+    <p>Most GPS devices or GIS software will give you these values directly.</p>
+  </div>
+</section>
+
 {% endblock %}
