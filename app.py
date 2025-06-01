@@ -12,10 +12,10 @@ def utm_dms():
    if request.method == 'POST':
       easting = request.form['easting']
       northing = request.form['northing']
-      lon = request.form['lon']
+      zone = request.form['zone']
       
-      if easting and northing and lon:
-         result = UTM_to_DMS(lon, easting, northing)     
+      if easting and northing and zone:
+         result = UTM_to_DMS(zone, easting, northing)     
          return render_template('utm-dms.html', output=result)
       else:
          return "An Error Occured"
@@ -28,10 +28,10 @@ def utm_latlon():
    if request.method == 'POST':
       easting = request.form['easting']
       northing = request.form['northing']
-      lon = request.form['lon']
+      zone = request.form['zone']
       
-      if easting and northing and lon:
-         result = UTM_to_latlon(lon, easting, northing)     
+      if easting and northing and zone:
+         result = UTM_to_latlon(zone, easting, northing)     
          return render_template('utm-latlon.html', output=result)
       else:
          return "An Error Occured"

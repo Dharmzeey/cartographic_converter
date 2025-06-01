@@ -1,13 +1,13 @@
 from pyproj import Proj
 import math
 
-def UTM_to_latlon(lon, easting, northing):
-  lon = float(lon)
+def UTM_to_latlon(zone, easting, northing):
+  zone = float(zone)
   easting = float(easting)
   northing = float(northing)
 
   # Define the UTM zone
-  zone = math.floor ((lon + 180.0) / 6) + 1
+  # zone = math.floor ((lon + 180.0) / 6) + 1
 
   # Create a Proj object for the UTM zone
   p = Proj(proj='utm', zone=zone, ellps='WGS84')
@@ -20,16 +20,16 @@ def UTM_to_latlon(lon, easting, northing):
   return ret_val
 
 
-def UTM_to_DMS(lon, easting, northing):
+def UTM_to_DMS(zone, easting, northing):
 
-  lon = float(lon)
+  zone = float(zone)
   easting = float(easting)
   northing = float(northing)
 
 
   # Define the UTM zone
   # zone = 31
-  zone = math.floor ((lon + 180.0) / 6) + 1
+  # zone = math.floor ((lon + 180.0) / 6) + 1
 
 
   # Create a Proj object for the UTM zone

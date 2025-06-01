@@ -5,10 +5,29 @@
 
 <section class="intro">
   <p>
-    This tool helps you convert coordinates between different geographic
-    systems. Whether you're working with maps, GIS data, or field surveys, this
-    app makes it easy to switch between formats.
+    This tool converts UTM coordinates with known <strong>Easting</strong>,
+    <strong>Northing</strong> and <strong>Zone</strong> values. Instantly
+    convert your data into Latitude/Longitude (decimal degrees) or Degrees,
+    Minutes, Seconds (DMS) formats.
   </p>
+</section>
+
+<!-- Info Toggle Section -->
+<section class="info-section">
+  <button id="toggle-info" class="info-toggle">
+    ℹ️ What are Easting and Northing?
+  </button>
+  <div id="info-content" class="info-content hidden">
+    <p>
+      <strong>Easting</strong> is the X-coordinate in the UTM system. It tells
+      you how far east (in meters) a location is from the central meridian of
+      its UTM zone.
+    </p>
+    <p>
+      <strong>Northing</strong> is the Y-coordinate. It tells you how far north
+      (in meters) a location is from the equator.
+    </p>
+  </div>
 </section>
 
 <section class="features">
@@ -42,25 +61,6 @@
     </li>
     <li>Click “Convert” to see the result instantly.</li>
   </ol>
-</section>
-
-<!-- templates/index.html -->
-<section class="info-section">
-  <button id="toggle-info" class="info-toggle">
-    ℹ️ What are Easting and Northing?
-  </button>
-  <div id="info-content" class="info-content hidden">
-    <p>
-      <strong>Easting</strong> is the X-coordinate in the UTM system. It tells
-      you how far east (in meters) a location is from the central meridian of
-      its UTM zone.
-    </p>
-    <p>
-      <strong>Northing</strong> is the Y-coordinate. It tells you how far north
-      (in meters) a location is from the equator.
-    </p>
-    <p>Most GPS devices or GIS software will give you these values directly.</p>
-  </div>
 </section>
 
 {% endblock %}

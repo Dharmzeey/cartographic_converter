@@ -2,16 +2,16 @@
 <h1 class="header">Convert from UTM to Latitude & Longitude</h1>
 
 <form action="/utm-latlon/" method="POST">
-  <label for="lon"
-    >Your Longitude:
-    <input type="number" step="any" name="lon" id="lon" required />
+  <label for="zone"
+    >Zone:
+    <input type="number" step="any" name="zone" id="zone" required />
   </label>
   <label for="easting"
-    >Easting:
+    >Easting (m):
     <input type="number" step="any" name="easting" id="easting" required />
   </label>
   <label for="northing"
-    >Northing:
+    >Northing (m):
     <input type="number" step="any" name="northing" id="northing" required />
   </label>
   <input type="submit" value="Convert" />
